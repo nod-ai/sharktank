@@ -13,13 +13,13 @@ import sys
 
 import torch
 
-from ..layers import *
-from ..types import *
+from sharktank.layers import *
+from sharktank.types import *
 
 # TODO: Should be using a base class with the protocol supported.
-from ..models.llama.llama import *
-from ..utils.debugging import trace_tensor
-from ..utils.tokenizer import InferenceTokenizer, load_tokenizer
+from sharktank.models.llama.llama import *
+from sharktank.utils.debugging import trace_tensor
+from sharktank.utils.tokenizer import InferenceTokenizer, load_tokenizer
 
 
 class TorchGenerator:
@@ -229,7 +229,7 @@ def main():
     prompts = args.prompt
 
     config = LlamaModelConfig(
-        hp=configs.LlamaHParams.from_gguf_props(dataset.properties),
+        hp=configs.LlamaHParams.from_hf_props(dataset.properties),
         block_seq_stride=16,
         kv_cache_type=args.kv_cache_type,
         device=device,
