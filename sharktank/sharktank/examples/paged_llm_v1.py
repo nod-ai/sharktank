@@ -258,6 +258,7 @@ def main():
         model = PagedMixtralModelV1(dataset.root_theta, config)
     else:
         model = PagedLlamaModelV1(dataset.root_theta, config)
+  
     if args.save_intermediates_path:
         from ..utils.patching import SaveModuleResultTensorsPatch
 

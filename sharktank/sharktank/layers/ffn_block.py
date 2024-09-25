@@ -16,7 +16,6 @@ __all__ = [
     "FFN",
 ]
 
-
 class FFN(ThetaLayer):
     def __init__(
         self,
